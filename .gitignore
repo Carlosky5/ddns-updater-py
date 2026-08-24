@@ -1,0 +1,4 @@
+ddns.json
+ddns_state.json
+__pycache__/
+*.pyc
