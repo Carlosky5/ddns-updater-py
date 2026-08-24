@@ -129,7 +129,7 @@ def load_config():
         raise DpapiError("config payload invalid")
     if store.get("v") != 2:
         if store.get("v") == 1:
-            raise DpapiError("config v1 (DPAPI) found but DPAPI is disabled in this build — delete ddns.json and re-run setup")
+            raise DpapiError("config v1 (DPAPI) found but DPAPI is disabled in this build - delete ddns.json and re-run setup")
         raise DpapiError("config version mismatch")
     cfg = {"domain": store.get("domain"), "ddns_pwd": store.get("ddns_pwd"),
            "interval": store.get("interval", 300), "ttl": store.get("ttl", 600)}
@@ -210,7 +210,7 @@ def show_config():
         return 1
     out("domain:   %s" % cfg["domain"])
     out("ddns_pwd: ***")
-    out("storage:  PLAINTEXT JSON (TEST MODE — encryption disabled)")
+    out("storage:  PLAINTEXT JSON (TEST MODE - encryption disabled)")
     out("interval: %ss" % cfg.get("interval", 300))
     out("ttl:      %ss" % cfg.get("ttl", 600))
     out("file:     %s" % CONFIG_PATH)
@@ -304,7 +304,7 @@ def run_cycle(cfg, opts):
     if ip is None:
         out("[%s] skipped (no IP fetched)" % ts)
         return
-    console_title("DDNS %s \u2014 %s \u2192 %s" % (mode, cfg["domain"], ip))
+    console_title("DDNS %s - %s -> %s" % (mode, cfg["domain"], ip))
     if not opts["force"] and read_state() == ip:
         out("[%s] IP unchanged: %s" % (ts, ip))
         return
