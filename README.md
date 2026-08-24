@@ -66,6 +66,8 @@ Settings are stored in `ddns.json` next to the script:
   re-trigger updates; it is also git-ignored.
 
 ## Notes
+- **Android phone as a second node:** see [MOBILE.md](MOBILE.md) — run the same tool on an old
+  phone via Termux.
 - **Plaintext config.** On some Windows systems DPAPI (`win32crypt.dll`) is unavailable, so this
   build stores the config unencrypted. Anyone who can read `ddns.json` can read the DDNS
   password. If that's a concern, restrict file permissions or regenerate the registrar password
